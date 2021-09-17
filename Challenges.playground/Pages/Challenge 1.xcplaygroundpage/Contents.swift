@@ -4,12 +4,7 @@ import Foundation
 
 // MARK: - Solution
 func uniqueCharacters(input: String) -> Bool {
-	var characterSet = Set<Character>()
-	for character in input {
-		if characterSet.contains(character) { return false }
-		characterSet.insert(character)
-	}
-	return true
+	Set(input).count == input.count
 }
 
 // MARK: - Tests
