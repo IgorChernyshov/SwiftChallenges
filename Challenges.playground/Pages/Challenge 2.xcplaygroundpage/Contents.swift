@@ -5,10 +5,10 @@ import Foundation
 // MARK: - Solution
 extension String {
 
+	/// Checks if the string is a palindrome.
 	var isPalindrome: Bool {
-		let lowercasedString = lowercased()
-		let asCharacters = lowercasedString.map { $0 }
-		return asCharacters.reversed() == asCharacters
+		let lowercase = lowercased()
+		return lowercase.reversed() == Array(lowercase)
 	}
 }
 
