@@ -6,9 +6,7 @@ import Foundation
 extension String {
 
 	func fuzzyContains(_ otherString: String) -> Bool {
-		let selfLowercased = lowercased()
-		let otherLowercased = otherString.lowercased()
-		return selfLowercased.range(of: otherLowercased) != nil
+		range(of: otherString, options: .caseInsensitive) != nil
 	}
 }
 
