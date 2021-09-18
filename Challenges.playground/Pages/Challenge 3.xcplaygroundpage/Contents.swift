@@ -4,17 +4,9 @@ import Foundation
 
 // MARK: - Solution
 func haveSameCharacters(stringOne: String, stringTwo: String) -> Bool {
-	if stringOne.count != stringTwo.count { return false }
 	let charactersOne = Array(stringOne)
-	var charactersTwo = Array(stringTwo)
-	for character in charactersOne {
-		if let index = charactersTwo.firstIndex(of: character) {
-			charactersTwo.remove(at: index)
-			continue
-		}
-		return false
-	}
-	return true
+	let charactersTwo = Array(stringTwo)
+	return charactersOne.sorted() == charactersTwo.sorted()
 }
 
 // MARK: - Tests
