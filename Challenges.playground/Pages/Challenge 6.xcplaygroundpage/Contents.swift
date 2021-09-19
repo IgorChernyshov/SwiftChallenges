@@ -4,10 +4,11 @@ import Foundation
 
 // MARK: - Solution
 func removeDuplicates(in string: String) -> String {
-	let charactersArray = string.map { String($0) }
-	let filteredCharactersSet = NSOrderedSet(array: charactersArray)
-	let filteredCharactersArray = Array(filteredCharactersSet) as? [String]
-	return filteredCharactersArray?.joined() ?? string
+	var used = [Character: Bool]()
+	let result = string.filter {
+		used.updateValue(true, forKey: $0) == nil
+	}
+	return String(result)
 }
 
 // MARK: - Tests
