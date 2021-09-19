@@ -4,7 +4,7 @@ import Foundation
 
 // MARK: - Solution
 func count(character: Character, in string: String) -> Int {
-	string.filter { $0 == character }.count
+	string.reduce(0) { $1 == character ? $0 + 1 : $0 }
 }
 
 // MARK: - Tests
