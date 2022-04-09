@@ -4,10 +4,8 @@ import Foundation
 // Write an extension for all collections that returns the N smallest elements
 // as an array, sorted smallest first, where N is an integer parameter.
 
-
 // MARK: - Solution
 extension Collection where Iterator.Element: Comparable {
-
 	func lastSmallest(maxElements: Int) -> [Iterator.Element] {
 		let sortedSelf = self.sorted(by: <)
 		let last = sortedSelf.prefix(maxElements)

@@ -4,7 +4,6 @@ import Foundation
 // Write an extension for collections of integers that returns the number of times
 // a specific digit appears in any of its numbers.
 
-
 // MARK: - Solution
 extension Collection where Iterator.Element == Int {
 
