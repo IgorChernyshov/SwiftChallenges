@@ -26,6 +26,16 @@ func midPoint(firstLinkedLetter: LinkedLetter) -> Character {
 	return letters[letters.count / 2]
 }
 
+func centerNode(firstLetter: LinkedLetter) -> Character? {
+	var slow: LinkedLetter? = firstLetter
+	var fast: LinkedLetter? = firstLetter
+	while fast != nil && fast?.nextLetter != nil {
+		slow = slow?.nextLetter
+		fast = fast?.nextLetter?.nextLetter
+	}
+	return slow?.character
+}
+
 // MARK: - Tests
 let a = LinkedLetter(character: "a")
 let b = LinkedLetter(character: "b")
@@ -34,3 +44,4 @@ a.nextLetter = b
 b.nextLetter = c
 
 midPoint(firstLinkedLetter: a) == "b"
+centerNode(firstLetter: a) == "b"
